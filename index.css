@@ -1,3 +1,13 @@
+*::before,
+*::after,
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
 li {
   list-style: none;
 }
@@ -16,12 +26,34 @@ a:hover {
 ul {
   padding-left: 0;
 }
-.flex {
+
+.footer {
   display: flex;
+  width: 100%;
+  height: min-content;
+  justify-content: center;
 }
+
+.main-container {
+  display: flex;
+  width: 80%;
+  min-height: 500px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .footer-middle {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
@@ -36,58 +68,84 @@ ul {
   gap: 8px;
 }
 
-/* 
-<div>
-  <input type="text" class="inputText" required/>
-  <span class="floating-label">Your email address</span>
-</div> 
-*/
-
-input:focus ~ .floating-label,
-input:not(:focus):valid ~ .floating-label {
-  top: 8px;
-  bottom: 10px;
-  left: 20px;
-  font-size: 11px;
-  opacity: 1;
-}
-
-.inputText {
-  font-size: 14px;
-  width: 200px;
-  height: 35px;
-}
-
-.floating-label {
-  position: absolute;
-  pointer-events: none;
-  left: 20px;
-  top: 18px;
-  transition: 0.2s ease all;
-}
-
-.footer-newsletter > h3 {
-  font-weight: 200;
-}
-
-.footer-newsletter input {
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.71);
-  outline: none;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.footer-newsletter-checkbox {
+.footer-services {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0;
-  margin: 0;
-  border: 2px solid red;
 }
 
-.footer {
+.footer-services-links {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+.footer-partners {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-partners-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#footer-email {
+  width: 100%;
+}
+
+.footer-bottom {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-bottom-images {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-bottom-address {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-bottom-t_and_c {
+  padding-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.none {
+  display: initial;
+}
+.block {
+  display: initial;
+}
+
+@media (max-width: 400px) {
+  .footer-top {
+    flex-direction: column;
+  }
+  .footer-middle {
+    flex-direction: column;
+  }
+  .footer-newsletter {
+    order: -1;
+  }
+  .footer-bottom-address img {
+    display: none;
+  }
+  .none {
+    display: none;
+  }
+  .block {
+    display: block;
+  }
+}
+
+#test *:hover {
+  color: red;
 }
